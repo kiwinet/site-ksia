@@ -5,7 +5,7 @@ to  perform the following commands:
 
     git clone git://github.com/freifunk-gluon/site-ffhl.git site # Get the Freifunk Lübeck site repository - or use your own!
     make update                                                  # Get other repositories used by Gluon
-    make                                                         # Build Gluon
+    make GLUON_TARGET=ar71xx-generic                             # Build Gluon
 
 When calling make, the OpenWRT build environment is prepared/updated. To rebuild
 the images only, just use:
