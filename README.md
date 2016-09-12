@@ -1,5 +1,22 @@
 # site-ksia
 
+# Dependencies
+
+To build Gluon, several packages need to be installed on the system. On a freshly installed Debian Wheezy system the following packages are required:
+
+    git (to get Gluon and other dependencies)
+    subversion
+    python (Python 3 doesn’t work)
+    build-essential
+    gawk
+    unzip
+    libncurses-dev (actually libncurses5-dev)
+    libz-dev (actually zlib1g-dev)
+    libssl-dev
+
+
+# Building the images
+
 To build Gluon, after checking out the repository change to the source root directory
 to  perform the following commands:
 
@@ -7,24 +24,25 @@ to  perform the following commands:
     make update                                                  # Get other repositories used by Gluon
     make GLUON_TARGET=ar71xx-generic                             # Build Gluon
 
-When calling make, the OpenWRT build environment is prepared/updated. To rebuild
-the images only, just use:
+When calling make, the OpenWrt build environment is prepared/updated. In case of errors read the messages carefully and try to fix the stated issues (e.g. install tools not available yet).
 
-    make images
+ar71xx-generic is the most common target and will generate images for most of the supported hardware. To see a complete list of supported targets, call make without setting GLUON_TARGET.
 
-The built images can be found in the directory `images`. Of these, the factory
-images are to be used when flashing from the original firmware a device came with,
-and sysupgrade is to upgrade from other versions of Gluon or any other OpenWRT-based
-system.
+You should reserve about 10GB of disk space for each GLUON_TARGET.
 
-For the build reserve 10GB of disk space. The build requires packages
-for `subversion`, ncurses headers (`libncurses-dev`) and zlib headers
-(`libz-dev`).`
+The built images can be found in the directory output/images. Of these, the factory images are to be used when flashing from the original firmware a device came with, and sysupgrade is to upgrade from other versions of Gluon or any other OpenWrt-based system.
+
+Note: The images for some models are identical; to save disk space, symlinks are generated instead of multiple copies of the same image. If your webserver’s configuration prohibits following symlinks, you can use the following command to resolve these links while copying the images:
+
+cp -rL output/images /var/www
+
+
+# Cleaning the build tree
 
 
 There are two levels of `make clean`:
 
-    make clean
+    make clean GLUON_TARGET=ar71xx-generic
 
 will ensure all packages are rebuilt; this is what you normally want to do after an update.
 
@@ -33,70 +51,14 @@ will ensure all packages are rebuilt; this is what you normally want to do after
 will clean the entire tree, so the toolchain will be rebuilt as well, which is
 not necessary in most cases, and will take a while.
 
+
+
 So all in all, to update and rebuild a Gluon build tree, the following commands should be used:
 
     git pull
     (cd site && git pull)
     make update
-    make clean
-    make
+    make clean GLUON_TARGET=ar71xx-generic
+    make GLUON_TARGET=ar71xx-generic
 
 
-# The autoupdater
-
-Gluon contains an automatic update system which can be configured in the site configuration.
-
-By default, the autoupdater is disabled (as it is usually not helpful to have unexpected updates
-during development), but it can be enabled by setting the variable GLUON_BRANCH when building
-to override the default branch set in the set in the site configuration.
-
-A manifest file for the updater can be generated with `make manifest`. A signing script (using
-ecdsautils) can by found in the `contrib` directory.
-
-A fully automated nightly build could use the following commands:
-
-    git pull
-    (cd site && git pull)
-    make update
-    make clean
-    make -j5 GLUON_BRANCH=experimental
-    make manifest GLUON_BRANCH=experimental
-    contrib/sign.sh $SECRETKEY images/sysupgrade/experimental.manifest
-    cp -r images /where/to/put/this/experimental
-    mv /where/to/put/this/experimental/experimental.manifest /where/to/put/this/experimental/manifest
-
-
-# Development
-
-**Gluon IRC channel: `#gluon` in hackint**
-
-To update the repositories used by Gluon, just adjust the commit IDs in `modules` and
-rerun
-
-	make update
-
-`make update` also applies the patches that can be found in the directories found in
-`patches`; the resulting branch will be called `patched`, while the commit specified in `modules`
-can be refered to by the branch `base`.
-
-	make unpatch
-
-sets the repositories to the `base` branch,
-
-	make patch
-
-re-applies the patches by resetting the `patched` branch to `base` and calling `git am`
-for the patch files. Calling `make` or a similar command after calling `make unpatch`
-is generally not a good idea.
-
-After new patches have been commited on top of the patched branch (or existing commits
-since the base commit have been edited or removed), the patch directories can be regenerated
-using
-
-	make update-patches
-
-If applying a patch fails because you have changed the base commit, the repository will be reset to the old `patched` branch
-and you can try rebasing it onto the new `base` branch yourself and after that call `make update-patches` to fix the problem.
-
-Always call `make update-patches` after making changes to a module repository as `make update` will overwrite your
-commits, making `git reflog` the only way to recover them!

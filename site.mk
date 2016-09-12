@@ -4,6 +4,8 @@
 #		specify gluon/openwrt packages to include here
 #		The gluon-mesh-batman-adv-* package must come first because of the dependency resolution
 #	gluon-ebtables-segment-mld \
+#		gluon-config-mode-site-select \
+
 
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
@@ -16,7 +18,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-geo-location \
 	gluon-config-mode-hostname \
 	gluon-config-mode-mesh-vpn \
-	gluon-config-mode-site-select \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-luci-admin \
