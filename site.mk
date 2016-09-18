@@ -62,8 +62,10 @@ GLUON_PRIORITY ?= 0
 GLUON_REGION ?= eu
 
 # Languages to include
-GLUON_LANGS ?= lt en
+GLUON_LANGS ?= lt en de
 
 # meshing standard used on ath10k devices (ibss/11s)
-GLUON_ATH10K_MESH ?= 11s
+GLUON_ATH10K_MESH ?= ibss
 
+# branch stable, beta, experimental
+ GLUON_BRANCH := stable
