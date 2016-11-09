@@ -7,6 +7,8 @@
 #			gluon-announce-kiwi \
 #				gluon-airtime \
 #					gluon-status-page \
+#					gluon-mesh-vpn-fastd \
+#					gluon-luci-mesh-vpn-fastd \
 
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
@@ -27,10 +29,8 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-portconfig \
 	gluon-luci-wifi-config \
 	gluon-luci-private-wifi \
-	gluon-luci-mesh-vpn-fastd \
 	gluon-luci-node-role \
 	gluon-next-node \
-	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-setup-mode \
 	haveged \
