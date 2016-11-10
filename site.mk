@@ -9,6 +9,7 @@
 #					gluon-status-page \
 #					gluon-mesh-vpn-fastd \
 #					gluon-luci-mesh-vpn-fastd \
+#						gluon-config-mode-mesh-vpn \
 
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
@@ -20,7 +21,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-core \
 	gluon-config-mode-geo-location \
 	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-segment-mld \
