@@ -36,7 +36,8 @@ GLUON_SITE_PACKAGES := \
 	haveged \
 	iptables \
 	iwinfo \
-	ffho-node-tuning \
+	kiwi-node-tuning \
+	kiwi-additional-wifi-json-info \
 	gluon-banner \
 	gluon-config-mode-site-select \
 	gluon-config-mode-tunneldigger \
