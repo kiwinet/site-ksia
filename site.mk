@@ -38,6 +38,7 @@ GLUON_SITE_PACKAGES := \
 	iwinfo \
 	kiwi-node-tuning \
 	kiwi-additional-wifi-json-info \
+	kiwi-respondd-module-airtime \
 	gluon-banner \
 	gluon-config-mode-site-select \
 	gluon-config-mode-tunneldigger \
