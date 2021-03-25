@@ -1,8 +1,30 @@
 ##	gluon site.mk makefile example
 
+##	GLUON_FEATURES
+#		Specify Gluon features/packages to enable;
+#		Gluon will automatically enable a set of packages
+#		depending on the combination of features listed
+
+GLUON_FEATURES := \
+	autoupdater \
+	ebtables-filter-multicast \
+	ebtables-filter-ra-dhcp \
+	ebtables-limit-arp \
+	mesh-batman-adv-15 \
+	mesh-vpn-fastd \
+	respondd \
+	status-page \
+	web-advanced \
+	web-wizard \
+	config-mode-domain-select
+
 ##	GLUON_SITE_PACKAGES
-#		specify gluon/openwrt packages to include here
-#		The gluon-mesh-batman-adv-* package must come first because of the dependency resolution
+#		Specify additional Gluon/OpenWrt packages to include here;
+#		A minus sign may be prepended to remove a packages from the
+#		selection that would be enabled by default or due to the
+#		chosen feature flags
+
+
 #	gluon-ebtables-segment-mld \
 #			gluon-announce-kiwi \
 #				gluon-airtime \
@@ -12,58 +34,35 @@
 #						gluon-config-mode-mesh-vpn \
 
 GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-15 \
-	gluon-alfred \
-	gluon-respondd \
-	gluon-autoupdater \
-	gluon-config-mode-autoupdater \
-	gluon-config-mode-contact-info \
-	gluon-config-mode-core \
-	gluon-config-mode-geo-location \
-	gluon-config-mode-hostname \
-	gluon-ebtables-filter-multicast \
-	gluon-ebtables-filter-ra-dhcp \
-	gluon-ebtables-segment-mld \
-	gluon-luci-admin \
-	gluon-luci-autoupdater \
-	gluon-luci-portconfig \
-	gluon-luci-wifi-config \
-	gluon-luci-private-wifi \
-	gluon-luci-node-role \
-	gluon-next-node \
-	gluon-radvd \
-	gluon-setup-mode \
-	haveged \
+	gluon-ebtables-source-filter \
+	gluon-web-private-wifi \
+	gluon-web-network \
 	iptables \
-	iwinfo \
 	kiwi-node-tuning \
 	kiwi-additional-wifi-json-info \
 	gluon-banner \
 	gluon-config-mode-site-select \
 	gluon-config-mode-tunneldigger \
 	gluon-config-mode-wan-mac \
-	gluon-mesh-vpn-tunneldigger \
 	gluon-ssid-changer \
-	gluon-status-page-my \
-	gluon-tunneldigger-watchdog \
 	gluon-txpowerfix \
-	tunneldigger
+	iwinfo
 
-GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
-    kmod-usb2 \
-    kmod-usb-printer \
-    kmod-ledtrig-usbdev \
-    p910nd \
-    gluon-p910nd-update \
-    usbutils
+# GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
+#     kmod-usb2 \
+#     kmod-usb-printer \
+#     kmod-ledtrig-usbdev \
+#     p910nd \
+#     gluon-p910nd-update \
+#     usbutils
 
-GLUON_TLWR1043_SITE_PACKAGES := kmod-usb-core \
-    kmod-usb2 \
-    kmod-usb-printer \
-    kmod-ledtrig-usbdev \
-    p910nd \
-    gluon-p910nd-update \
-    usbutils
+# GLUON_TLWR1043_SITE_PACKAGES := kmod-usb-core \
+#     kmod-usb2 \
+#     kmod-usb-printer \
+#     kmod-ledtrig-usbdev \
+#     p910nd \
+#     gluon-p910nd-update \
+#     usbutils
 
 ##
 ## kmod-leds-wndr3700-usb
@@ -77,6 +76,7 @@ GLUON_TLWR1043_SITE_PACKAGES := kmod-usb-core \
 
 DEFAULT_GLUON_RELEASE := 0.9+exp$(shell date '+%Y%m%d')
 
+# Variables set with ?= can be overwritten from the command line
 
 ##	GLUON_RELEASE
 #		call make with custom GLUON_RELEASE flag, to use your own release version scheme.
@@ -85,7 +85,6 @@ DEFAULT_GLUON_RELEASE := 0.9+exp$(shell date '+%Y%m%d')
 #		would generate images named like this:
 #			gluon-ff%site_code%-23.42+5-%router_model%.bin
 
-# Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 # Default priority for updates.
@@ -97,5 +96,10 @@ GLUON_REGION ?= eu
 # Languages to include
 GLUON_LANGS ?= lt en de
 
+# Do not build images for deprecated devices
+GLUON_DEPRECATED ?= 0
+
 # meshing standard used on ath10k devices (ibss/11s)
-GLUON_ATH10K_MESH ?= ibss
+#GLUON_ATH10K_MESH ?= ibss
+
+GLUON_MULTIDOMAIN = 0
