@@ -33,19 +33,22 @@ GLUON_FEATURES := \
 #					gluon-luci-mesh-vpn-fastd \
 #						gluon-config-mode-mesh-vpn \
 
+
+#	kiwi-node-tuning \
+#	kiwi-additional-wifi-json-info \
+
+#	gluon-config-mode-tunneldigger \
+#	gluon-config-mode-wan-mac \
+#	gluon-txpowerfix \
+
 GLUON_SITE_PACKAGES := \
 	gluon-ebtables-source-filter \
 	gluon-web-private-wifi \
 	gluon-web-network \
 	iptables \
-	kiwi-node-tuning \
-	kiwi-additional-wifi-json-info \
 	gluon-banner \
 	gluon-config-mode-site-select \
-	gluon-config-mode-tunneldigger \
-	gluon-config-mode-wan-mac \
 	gluon-ssid-changer \
-	gluon-txpowerfix \
 	iwinfo
 
 # GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
