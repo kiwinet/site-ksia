@@ -5,6 +5,8 @@
 #		Gluon will automatically enable a set of packages
 #		depending on the combination of features listed
 
+#	config-mode-domain-select
+
 GLUON_FEATURES := \
 	autoupdater \
 	ebtables-filter-multicast \
@@ -15,8 +17,7 @@ GLUON_FEATURES := \
 	respondd \
 	status-page \
 	web-advanced \
-	web-wizard \
-	config-mode-domain-select
+	web-wizard
 
 ##	GLUON_SITE_PACKAGES
 #		Specify additional Gluon/OpenWrt packages to include here;
