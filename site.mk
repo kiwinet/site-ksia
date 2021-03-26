@@ -40,15 +40,15 @@ GLUON_FEATURES := \
 #	gluon-config-mode-tunneldigger \
 #	gluon-config-mode-wan-mac \
 #	gluon-txpowerfix \
+#	gluon-banner \
+#	gluon-config-mode-site-select \
+#	gluon-ssid-changer \
 
 GLUON_SITE_PACKAGES := \
 	gluon-ebtables-source-filter \
 	gluon-web-private-wifi \
 	gluon-web-network \
 	iptables \
-	gluon-banner \
-	gluon-config-mode-site-select \
-	gluon-ssid-changer \
 	iwinfo
 
 # GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
