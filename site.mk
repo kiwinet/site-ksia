@@ -101,7 +101,7 @@ GLUON_REGION ?= eu
 GLUON_LANGS ?= lt en de
 
 # Do not build images for deprecated devices
-GLUON_DEPRECATED ?= 0
+GLUON_DEPRECATED ?= full
 
 # meshing standard used on ath10k devices (ibss/11s)
 #GLUON_ATH10K_MESH ?= ibss
