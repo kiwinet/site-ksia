@@ -5,7 +5,7 @@
 #		Gluon will automatically enable a set of packages
 #		depending on the combination of features listed
 
-#	config-mode-domain-select
+# mesh-wireless-sae \
 
 GLUON_FEATURES := \
 	autoupdater \
@@ -16,8 +16,12 @@ GLUON_FEATURES := \
 	mesh-vpn-tunneldigger \
 	respondd \
 	status-page \
+	web-admin \
 	web-advanced \
 	web-wizard
+
+GLUON_FEATURES_standard := \
+  wireless-encryption-wpa3
 
 ##	GLUON_SITE_PACKAGES
 #		Specify additional Gluon/OpenWrt packages to include here;
@@ -46,7 +50,7 @@ GLUON_FEATURES := \
 #	gluon-ssid-changer \
 
 GLUON_SITE_PACKAGES := \
-	gluon-ebtables-source-filter \
+	-gluon-ebtables-source-filter \
 	gluon-web-private-wifi \
 	gluon-web-network \
 	iptables \
@@ -78,7 +82,7 @@ GLUON_SITE_PACKAGES := \
 #			opkg compare-versions "$1" '>>' "$2"
 #		to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 0.9+exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.91+exp$(shell date '+%Y%m%d')
 
 # Variables set with ?= can be overwritten from the command line
 
@@ -98,7 +102,7 @@ GLUON_PRIORITY ?= 0.5
 GLUON_REGION ?= eu
 
 # Languages to include
-GLUON_LANGS ?= lt en de
+GLUON_LANGS ?= lt en
 
 # Do not build images for deprecated devices
 GLUON_DEPRECATED ?= full
@@ -106,4 +110,4 @@ GLUON_DEPRECATED ?= full
 # meshing standard used on ath10k devices (ibss/11s)
 #GLUON_ATH10K_MESH ?= ibss
 
-GLUON_MULTIDOMAIN = 0
+GLUON_MULTIDOMAIN ?= 0
