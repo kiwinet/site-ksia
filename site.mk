@@ -23,8 +23,7 @@ GLUON_FEATURES := \
 	status-page \
 	web-admin \
 	web-advanced \
-	web-wizard \
-	config-mode-domain-select
+	web-wizard
 
 GLUON_FEATURES_standard := \
   wireless-encryption-wpa3
