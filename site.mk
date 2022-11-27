@@ -7,6 +7,10 @@
 
 # mesh-wireless-sae \
 
+# for logging
+#	web-logging \
+#	logging
+
 GLUON_FEATURES := \
 	autoupdater \
 	ebtables-filter-multicast \
@@ -14,11 +18,13 @@ GLUON_FEATURES := \
 	ebtables-limit-arp \
 	mesh-batman-adv-15 \
 	mesh-vpn-tunneldigger \
+	mesh-wireless-sae \
 	respondd \
 	status-page \
 	web-admin \
 	web-advanced \
-	web-wizard
+	web-wizard \
+	config-mode-domain-select
 
 GLUON_FEATURES_standard := \
   wireless-encryption-wpa3
@@ -39,22 +45,23 @@ GLUON_FEATURES_standard := \
 #						gluon-config-mode-mesh-vpn \
 
 
-#	kiwi-node-tuning \
-#	kiwi-additional-wifi-json-info \
-
-#	gluon-config-mode-tunneldigger \
-#	gluon-config-mode-wan-mac \
-#	gluon-txpowerfix \
-#	gluon-banner \
 #	gluon-config-mode-site-select \
-#	gluon-ssid-changer \
+#	gluon-config-mode-tunneldigger \
+#	gluon-status-page-my \
 
 GLUON_SITE_PACKAGES := \
 	-gluon-ebtables-source-filter \
 	gluon-web-private-wifi \
 	gluon-web-network \
 	iptables \
-	iwinfo
+	iwinfo \
+	kiwi-node-tuning \
+	kiwi-additional-wifi-json-info \
+	kiwi-respondd-module-airtime \
+	gluon-config-mode-wan-mac \
+	gluon-txpowerfix \
+	gluon-ssid-changer \
+	gluon-banner
 
 # GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
 #     kmod-usb2 \
@@ -82,7 +89,7 @@ GLUON_SITE_PACKAGES := \
 #			opkg compare-versions "$1" '>>' "$2"
 #		to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 0.91+exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.93+exp$(shell date '+%Y%m%d')
 
 # Variables set with ?= can be overwritten from the command line
 
