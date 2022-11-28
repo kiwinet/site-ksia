@@ -21,6 +21,7 @@ GLUON_FEATURES := \
 
 # 	gluon-authorized-keys
 # 	gluon-web-private-wifi \
+# 	gluon-web-mesh-vpn-fastd \
 
 GLUON_SITE_PACKAGES := \
 	haveged \
@@ -33,8 +34,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-ssid-changer \
 	gluon-status-page-mesh-batman-adv \
 	gluon-alfred \
-	gluon-web-mesh-vpn-fastd \
-	gluon-web-mesh-vpn-tunneldigger \
 	gluon-web-logging \
 	gluon-web-admin \
 	gluon-web-node-role \
@@ -44,7 +43,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-theme \
 	gluon-config-mode-geo-location-osm \
 	gluon-radv-filterd
-	
+
 
 
 # GLUON_SITE_PACKAGES := \
