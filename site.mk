@@ -1,12 +1,14 @@
 ##	gluon site.mk makefile example
+	
+# 	mesh-vpn-fastd \
+# 	mesh-babel ???
 
 GLUON_FEATURES := \
 	autoupdater \
 	ebtables-filter-multicast \
 	ebtables-filter-ra-dhcp \
-	ebtables-limit-arp \
 	mesh-batman-adv-15 \
-	mesh-vpn-fastd \
+	mesh-vpn-tunneldigger \
 	respondd \
 	status-page \
 	web-advanced \
@@ -17,68 +19,40 @@ GLUON_FEATURES := \
 #		specify gluon/openwrt packages to include here
 #		The gluon-mesh-batman-adv-* package must come first because of the dependency resolution
 
+# 	gluon-authorized-keys
+# 	gluon-web-private-wifi \
+
 GLUON_SITE_PACKAGES := \
 	haveged \
-	iwinfo
+	iwinfo \
+	kiwi-node-tuning \
+	kiwi-additional-wifi-json-info \
+	gluon-banner \
+	gluon-config-mode-wan-mac \
+	gluon-txpowerfix \
+	gluon-ssid-changer \
+	gluon-status-page-mesh-batman-adv \
+	gluon-alfred \
+	gluon-web-mesh-vpn-fastd \
+	gluon-web-mesh-vpn-tunneldigger \
+	gluon-web-logging \
+	gluon-web-admin \
+	gluon-web-node-role \
+	gluon-wan-dnsmasq \
+	gluon-node-info \
+	gluon-neighbour-info \
+	gluon-config-mode-theme \
+	gluon-config-mode-geo-location-osm \
+	gluon-radv-filterd
+	
 
 
 # GLUON_SITE_PACKAGES := \
-# 	gluon-mesh-batman-adv-15 \
-# 	gluon-alfred \
-# 	gluon-respondd \
-# 	gluon-autoupdater \
-# 	gluon-config-mode-autoupdater \
-# 	gluon-config-mode-contact-info \
-# 	gluon-config-mode-core \
-# 	gluon-config-mode-geo-location \
-# 	gluon-config-mode-hostname \
-# 	gluon-ebtables-filter-multicast \
-# 	gluon-ebtables-filter-ra-dhcp \
 # 	gluon-ebtables-segment-mld \
-# 	gluon-luci-admin \
-# 	gluon-luci-autoupdater \
-# 	gluon-luci-portconfig \
-# 	gluon-luci-wifi-config \
-# 	gluon-luci-private-wifi \
-# 	gluon-luci-node-role \
-# 	gluon-next-node \
-# 	gluon-setup-mode \
-# 	haveged \
-# 	iptables \
-# 	iwinfo \
-# 	kiwi-node-tuning \
-# 	kiwi-additional-wifi-json-info \
 # 	kiwi-respondd-module-airtime \
-# 	gluon-banner \
 # 	gluon-config-mode-site-select \
-# 	gluon-config-mode-tunneldigger \
-# 	gluon-config-mode-wan-mac \
-# 	gluon-mesh-vpn-tunneldigger \
-# 	gluon-ssid-changer \
 # 	gluon-status-page-my \
-# 	gluon-tunneldigger-watchdog \
-# 	gluon-txpowerfix \
-# 	tunneldigger
 
-# GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
-#     kmod-usb2 \
-#     kmod-usb-printer \
-#     kmod-ledtrig-usbdev \
-#     p910nd \
-#     gluon-p910nd-update \
-#     usbutils
-
-# GLUON_TLWR1043_SITE_PACKAGES := kmod-usb-core \
-#     kmod-usb2 \
-#     kmod-usb-printer \
-#     kmod-ledtrig-usbdev \
-#     p910nd \
-#     gluon-p910nd-update \
-#     usbutils
-
-##
-## kmod-leds-wndr3700-usb
-##
 
 ##	DEFAULT_GLUON_RELEASE
 #		version string to use for images
