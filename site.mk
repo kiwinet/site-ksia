@@ -31,7 +31,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-private-wifi \
 	gluon-luci-node-role \
 	gluon-next-node \
-	gluon-radvd \
 	gluon-setup-mode \
 	haveged \
 	iptables \
@@ -96,7 +95,9 @@ GLUON_PRIORITY ?= 0
 GLUON_REGION ?= eu
 
 # Languages to include
-GLUON_LANGS ?= lt en de
+GLUON_LANGS ?= lt en
 
 # meshing standard used on ath10k devices (ibss/11s)
-GLUON_ATH10K_MESH ?= ibss
+GLUON_ATH10K_MESH ?= ibss 11s
+
+GLUON_DEPRECATED ?= full
