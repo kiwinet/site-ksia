@@ -98,6 +98,6 @@ GLUON_REGION ?= eu
 GLUON_LANGS ?= lt en
 
 # meshing standard used on ath10k devices (ibss/11s)
-GLUON_ATH10K_MESH ?= ibss 11s
+GLUON_ATH10K_MESH ?= 11s
 
 GLUON_DEPRECATED ?= full
