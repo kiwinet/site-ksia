@@ -1,69 +1,80 @@
 ##	gluon site.mk makefile example
 
+GLUON_FEATURES := \
+	autoupdater \
+	ebtables-filter-multicast \
+	ebtables-filter-ra-dhcp \
+	ebtables-limit-arp \
+	mesh-batman-adv-15 \
+	mesh-vpn-fastd \
+	respondd \
+	status-page \
+	web-advanced \
+	web-wizard
+
+
 ##	GLUON_SITE_PACKAGES
 #		specify gluon/openwrt packages to include here
 #		The gluon-mesh-batman-adv-* package must come first because of the dependency resolution
-#	gluon-ebtables-segment-mld \
-#			gluon-announce-kiwi \
-#				gluon-airtime \
-#					gluon-status-page \
-#					gluon-mesh-vpn-fastd \
-#					gluon-luci-mesh-vpn-fastd \
-#						gluon-config-mode-mesh-vpn \
 
 GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-15 \
-	gluon-alfred \
-	gluon-respondd \
-	gluon-autoupdater \
-	gluon-config-mode-autoupdater \
-	gluon-config-mode-contact-info \
-	gluon-config-mode-core \
-	gluon-config-mode-geo-location \
-	gluon-config-mode-hostname \
-	gluon-ebtables-filter-multicast \
-	gluon-ebtables-filter-ra-dhcp \
-	gluon-ebtables-segment-mld \
-	gluon-luci-admin \
-	gluon-luci-autoupdater \
-	gluon-luci-portconfig \
-	gluon-luci-wifi-config \
-	gluon-luci-private-wifi \
-	gluon-luci-node-role \
-	gluon-next-node \
-	gluon-setup-mode \
 	haveged \
-	iptables \
-	iwinfo \
-	kiwi-node-tuning \
-	kiwi-additional-wifi-json-info \
-	kiwi-respondd-module-airtime \
-	gluon-banner \
-	gluon-config-mode-site-select \
-	gluon-config-mode-tunneldigger \
-	gluon-config-mode-wan-mac \
-	gluon-mesh-vpn-tunneldigger \
-	gluon-ssid-changer \
-	gluon-status-page-my \
-	gluon-tunneldigger-watchdog \
-	gluon-txpowerfix \
-	tunneldigger
+	iwinfo
 
-GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
-    kmod-usb2 \
-    kmod-usb-printer \
-    kmod-ledtrig-usbdev \
-    p910nd \
-    gluon-p910nd-update \
-    usbutils
 
-GLUON_TLWR1043_SITE_PACKAGES := kmod-usb-core \
-    kmod-usb2 \
-    kmod-usb-printer \
-    kmod-ledtrig-usbdev \
-    p910nd \
-    gluon-p910nd-update \
-    usbutils
+# GLUON_SITE_PACKAGES := \
+# 	gluon-mesh-batman-adv-15 \
+# 	gluon-alfred \
+# 	gluon-respondd \
+# 	gluon-autoupdater \
+# 	gluon-config-mode-autoupdater \
+# 	gluon-config-mode-contact-info \
+# 	gluon-config-mode-core \
+# 	gluon-config-mode-geo-location \
+# 	gluon-config-mode-hostname \
+# 	gluon-ebtables-filter-multicast \
+# 	gluon-ebtables-filter-ra-dhcp \
+# 	gluon-ebtables-segment-mld \
+# 	gluon-luci-admin \
+# 	gluon-luci-autoupdater \
+# 	gluon-luci-portconfig \
+# 	gluon-luci-wifi-config \
+# 	gluon-luci-private-wifi \
+# 	gluon-luci-node-role \
+# 	gluon-next-node \
+# 	gluon-setup-mode \
+# 	haveged \
+# 	iptables \
+# 	iwinfo \
+# 	kiwi-node-tuning \
+# 	kiwi-additional-wifi-json-info \
+# 	kiwi-respondd-module-airtime \
+# 	gluon-banner \
+# 	gluon-config-mode-site-select \
+# 	gluon-config-mode-tunneldigger \
+# 	gluon-config-mode-wan-mac \
+# 	gluon-mesh-vpn-tunneldigger \
+# 	gluon-ssid-changer \
+# 	gluon-status-page-my \
+# 	gluon-tunneldigger-watchdog \
+# 	gluon-txpowerfix \
+# 	tunneldigger
+
+# GLUON_TLWR842_SITE_PACKAGES := kmod-usb-core \
+#     kmod-usb2 \
+#     kmod-usb-printer \
+#     kmod-ledtrig-usbdev \
+#     p910nd \
+#     gluon-p910nd-update \
+#     usbutils
+
+# GLUON_TLWR1043_SITE_PACKAGES := kmod-usb-core \
+#     kmod-usb2 \
+#     kmod-usb-printer \
+#     kmod-ledtrig-usbdev \
+#     p910nd \
+#     gluon-p910nd-update \
+#     usbutils
 
 ##
 ## kmod-leds-wndr3700-usb
