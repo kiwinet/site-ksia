@@ -73,7 +73,7 @@ DEFAULT_GLUON_RELEASE := 0.9+exp$(shell date '+%Y%m%d')
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
 # Default priority for updates.
-GLUON_PRIORITY ?= 0
+GLUON_PRIORITY ?= 0.5
 
 # Region code required for some images; supported values: us eu
 GLUON_REGION ?= eu
