@@ -10,6 +10,7 @@ GLUON_FEATURES := \
 	mesh-batman-adv-15 \
 	mesh-vpn-tunneldigger \
 	respondd \
+	respondd-module-airtime \
 	status-page \
 	web-advanced \
 	web-wizard
