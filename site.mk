@@ -10,7 +10,6 @@ GLUON_FEATURES := \
 	mesh-batman-adv-15 \
 	mesh-vpn-tunneldigger \
 	respondd \
-	respondd-module-airtime \
 	status-page \
 	web-advanced \
 	web-wizard
@@ -27,6 +26,7 @@ GLUON_FEATURES := \
 GLUON_SITE_PACKAGES := \
 	haveged \
 	iwinfo \
+	respondd-module-airtime \
 	kiwi-node-tuning \
 	kiwi-additional-wifi-json-info \
 	gluon-banner \
