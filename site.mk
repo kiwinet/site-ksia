@@ -22,13 +22,13 @@ GLUON_FEATURES := \
 # 	gluon-authorized-keys
 # 	gluon-web-private-wifi \
 # 	gluon-web-mesh-vpn-fastd \
+# 	kiwi-additional-wifi-json-info \
 
 GLUON_SITE_PACKAGES := \
 	haveged \
 	iwinfo \
 	respondd-module-airtime \
 	kiwi-node-tuning \
-	kiwi-additional-wifi-json-info \
 	gluon-banner \
 	gluon-config-mode-wan-mac \
 	gluon-txpowerfix \
