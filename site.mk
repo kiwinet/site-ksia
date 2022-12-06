@@ -23,6 +23,7 @@ GLUON_FEATURES := \
 # 	gluon-web-private-wifi \
 # 	gluon-web-mesh-vpn-fastd \
 # 	kiwi-additional-wifi-json-info \
+# 	gluon-txpowerfix \
 
 GLUON_SITE_PACKAGES := \
 	haveged \
@@ -31,7 +32,6 @@ GLUON_SITE_PACKAGES := \
 	kiwi-node-tuning \
 	gluon-banner \
 	gluon-config-mode-wan-mac \
-	gluon-txpowerfix \
 	gluon-ssid-changer \
 	gluon-status-page-mesh-batman-adv \
 	gluon-alfred \
