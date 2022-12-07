@@ -24,11 +24,11 @@ GLUON_FEATURES := \
 # 	gluon-web-mesh-vpn-fastd \
 # 	kiwi-additional-wifi-json-info \
 # 	gluon-txpowerfix \
+# 	respondd-module-airtime \
 
 GLUON_SITE_PACKAGES := \
 	haveged \
 	iwinfo \
-	respondd-module-airtime \
 	kiwi-node-tuning \
 	gluon-banner \
 	gluon-config-mode-wan-mac \
