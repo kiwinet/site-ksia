@@ -24,15 +24,15 @@ GLUON_FEATURES := \
 # 	gluon-web-mesh-vpn-fastd \
 # 	kiwi-additional-wifi-json-info \
 # 	gluon-txpowerfix \
-# 	respondd-module-airtime \
+# 	kiwi-node-tuning \
+# 	gluon-banner \
+# 	gluon-config-mode-wan-mac \
+# 	gluon-ssid-changer \
 
 GLUON_SITE_PACKAGES := \
 	haveged \
 	iwinfo \
-	kiwi-node-tuning \
-	gluon-banner \
-	gluon-config-mode-wan-mac \
-	gluon-ssid-changer \
+	respondd-module-airtime \
 	gluon-status-page-mesh-batman-adv \
 	gluon-alfred \
 	gluon-web-logging \
